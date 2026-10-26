@@ -1640,8 +1640,8 @@ textarea:focus-visible {
     /* Mobile Image Styling */
     .hero-image {
         width: 140%;
-        left: -4%;
-        top: 0;
+        left: 0%;
+        top: -20;
         height: 110%; /* Stretch slightly to avoid empty edges */
         opacity: 0.25; /* Fainter for better text contrast */
         object-fit: cover;
