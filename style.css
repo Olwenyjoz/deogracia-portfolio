@@ -695,6 +695,62 @@ textarea:focus-visible {
 
 
 /* Resume */
+/* Resume heading */
+.resume-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Pushes text to the left, button to the right */
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    position: relative; /* Context for the heading line */
+}
+
+.resume-heading h2 {
+    margin: 0;
+    position: relative;
+    display: inline-block;
+}
+
+/* Ensures the blue line stays directly under the word "Resume" */
+.resume-heading .heading-line {
+    position: absolute;
+    left: 0;
+    bottom: -12px; /* Positioned nicely under the text */
+    margin-top: 0;
+}
+
+/* Beautifully styled View CV Button */
+.view-cv-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 22px;
+    border: 1px solid #173B57;
+    border-radius: 6px;
+    background: #173B57;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(23, 59, 87, 0.15);
+    transition: all 0.3s ease;
+}
+
+.view-cv-button:hover {
+    background: #0F293D;
+    border-color: #0F293D;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(23, 59, 87, 0.25);
+}
+
+.view-cv-button i {
+    font-size: 16px;
+}
+
 .resume-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1725,6 +1781,18 @@ textarea:focus-visible {
     }
 
     /* Other sections mobile layout */
+    .resume-heading {
+        flex-direction: row; /* Keeps them on the same line on mobile */
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+    }
+    
+    .view-cv-button {
+        padding: 8px 15px; /* Slightly smaller padding for mobile */
+        font-size: 12px;
+    }
+    
     .about-grid,
     .skills-grid,
     .resume-grid {
