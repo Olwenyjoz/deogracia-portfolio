@@ -1668,21 +1668,30 @@ textarea:focus-visible {
         padding: 0;
     }
 
+    .hero-label {
+        margin-bottom: 20px; /* More space below "WELCOME TO MY PORTFOLIO" */
+        line-height: 1.4;
+    }
+
     .hero-name {
         font-size: clamp(32px, 9vw, 45px);
         letter-spacing: -1px;
-        margin-bottom: 8px;
+        line-height: 1.15; /* Keeps the name tight and impactful */
+        margin-bottom: 24px; /* Pushes the "I'm a..." text down */
     }
 
     .hero-intro {
         font-size: 20px;
-        margin-top: 20px;
+        margin-top: 0;
+        margin-bottom: 24px; /* Space between "I'm a..." and the description */
+        line-height: 1.5;
     }
 
     .hero-description {
-        font-size: 14px;
-        line-height: 1.7;
-        margin-top: 15px;
+        font-size: 14.5px;
+        line-height: 1.85; /* Increased line-height for better readability */
+        margin-top: 0;
+        margin-bottom: 32px; /* Big gap before the buttons */
     }
 
     /* Ensure buttons stay side-by-side on mobile */
@@ -1691,7 +1700,8 @@ textarea:focus-visible {
         flex-wrap: nowrap;
         width: 100%;
         gap: 10px;
-        margin-top: 22px;
+        margin-top: 0;
+        margin-bottom: 32px; /* Gap between buttons and the quote */
     }
 
     .hero-actions .button {
@@ -1702,13 +1712,16 @@ textarea:focus-visible {
     }
 
     .hero-quote {
-        font-size: 12px;
-        margin-top: 20px;
-        padding: 12px;
+        font-size: 13px;
+        line-height: 1.7; /* Spacing between the lines of the quote */
+        margin-top: 0;
+        margin-bottom: 30px; /* Gap between quote and the scroll icon */
+        padding: 15px;
     }
     
     .scroll-indicator {
-        margin-top: 20px;
+        margin-top: 0;
+        margin-bottom: 20px;
     }
 
     /* Other sections mobile layout */
