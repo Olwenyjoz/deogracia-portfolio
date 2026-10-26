@@ -1573,7 +1573,7 @@ textarea:focus-visible {
     .hero-content {
         width: 100%;
         max-width: 600px;
-        margin-top: -80px;
+        margin-top: -30px;
     }
 
     .about-grid {
@@ -1635,11 +1635,11 @@ textarea:focus-visible {
         padding: 90px 20px 40px;
     }
 
-    /* Position and style the image perfectly for mobile/tablet */
+    /* Position and style the image perfectly for mobile */
     .hero-image {
         width: 100%;
         left: -18%;
-        top: -35px;
+        top: -20px;
         opacity: 0.3;
         object-fit: cover;
         object-position: left center;
