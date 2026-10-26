@@ -1,4 +1,3 @@
-
 /* Variables */
 :root {
     --navy: #353d47;
@@ -127,7 +126,7 @@ textarea:focus-visible {
     border-radius: 50%;
     background: #202d3b;
     color: var(--white);
-    font-size: 16px;
+    font-size: 18px;
     transition: background 0.25s ease, transform 0.25s ease;
 }
 
@@ -151,7 +150,7 @@ textarea:focus-visible {
     padding: 9px 12px;
     border-radius: 6px;
     color: #b7c3d1;
-    font-size: 14px;
+    font-size: 15px;
     transition: color 0.25s ease, background 0.25s ease;
 }
 
@@ -366,7 +365,7 @@ textarea:focus-visible {
 
 .hero-actions {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Prevents wrapping */
     gap: 12px;
     margin-top: 26px;
 }
@@ -1375,27 +1374,26 @@ textarea:focus-visible {
     resize: vertical;
 }
 
-/* WhatsApp button */
+/* Action Buttons Container */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.form-actions .button {
+    flex: 1; /* Stretches buttons to fill space perfectly side-by-side */
+}
+
 .button-whatsapp {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-left: 123px;
     background: #25D366;
     color: #fff;
-    text-decoration: none;
 }
 
 .button-whatsapp:hover {
     background: #1DA851;
     color: #fff;
-}
-
-@media (max-width: 480px) {
-    .button-whatsapp {
-        margin-left: 0;
-        margin-top: 10px;
-    }
 }
 
 .form-note {
@@ -1473,6 +1471,10 @@ textarea:focus-visible {
     transform: translateY(0);
 }
 
+/* ==========================================================================
+   Responsive Design & Media Queries
+   ========================================================================== */
+
 /* Tablet */
 @media (max-width: 1200px) {
     :root {
@@ -1493,7 +1495,7 @@ textarea:focus-visible {
     }
 
     .hero-content {
-        width: 74%;
+        width: 80%;
     }
 
     .hero-image {
@@ -1506,54 +1508,77 @@ textarea:focus-visible {
     }
 }
 
-/* Mobile navigation */
+/* Mobile & Tablet Layout (Hamburger Menu) */
 @media (max-width: 900px) {
     .menu-toggle {
         display: flex;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        z-index: 1300;
+        width: 50px;
+        height: 50px;
     }
 
     .sidebar {
-        transform: translateX(-100%);
-        box-shadow: none;
+        position: fixed;
+        z-index: 1200;
+        width: min(270px, 85vw);
+        height: 100vh;
+        transform: translateX(-105%);
+        visibility: hidden;
+        pointer-events: none;
+        transition: transform 0.35s ease, visibility 0.35s ease;
     }
 
     .sidebar.open {
         transform: translateX(0);
-        box-shadow: 10px 0 35px rgba(0, 0, 0, 0.25);
+        visibility: visible;
+        pointer-events: auto;
+        box-shadow: 10px 0 35px rgba(0, 0, 0, 0.3);
     }
 
     .main-content {
         margin-left: 0;
+        width: 100%;
     }
 
     .hero {
         min-height: 100vh;
-        padding: 95px 28px 50px;
+        padding: 80px 25px 40px; 
+        align-items: flex-start;
+        padding-top: 100px;
     }
 
+    /* Position and style the image perfectly for tablet */
     .hero-image {
-        width: 78%;
-        right: -4%;
-        opacity: 0.43;
-        object-position: right center;
+        width: 100%;
+        right: -25%;
+        top: -60px;
+        opacity: 0.3;
+        object-fit: cover;
+        object-position: top right;
     }
 
+    /* Adjust gradient for better text legibility */
     .hero-overlay {
         background: linear-gradient(
-            90deg,
-            rgba(4, 11, 20, 0.97),
-            rgba(4, 11, 20, 0.67)
+            135deg,
+            rgba(4, 11, 20, 0.98) 0%,
+            rgba(4, 11, 20, 0.65) 20%,
+            rgba(4, 11, 20, 0.4) 50%
         );
     }
 
     .hero-content {
         width: 100%;
-        max-width: 650px;
+        max-width: 600px;
+        margin-top: -80px;
     }
 
     .about-grid {
-        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-        gap: 23px;
+        grid-template-columns: 1fr;
+        gap: 25px;
     }
 
     .contact-grid {
@@ -1579,31 +1604,20 @@ textarea:focus-visible {
         transform: none;
     }
 
-    .gallery-project:hover > img,
-    .gallery-project:focus-within > img {
-        transform: scale(1.04);
-    }
-}
-
-/* Category filters on small screens */
-@media (max-width: 650px) {
-    .project-filters {
-        gap: 8px;
-        margin-bottom: 23px;
+    /* Contact Actions Alignment for Tablet */
+    .form-actions {
+        justify-content: space-between;
+        gap: 15px;
     }
 
-    .project-filter {
-        min-height: 39px;
-        padding: 8px 12px;
-        font-size: 12px;
-    }
-
-    .project-filter i {
+    .form-actions .button {
+        flex: 1;
+        padding: 11px 10px;
         font-size: 13px;
     }
 }
 
-/* Small screens */
+/* Small screens (Mobile Phones) */
 @media (max-width: 650px) {
     .section {
         padding: 45px 20px;
@@ -1614,27 +1628,36 @@ textarea:focus-visible {
     }
 
     .section-intro {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .hero {
-        padding: 90px 21px 40px;
+        padding: 90px 20px 40px;
     }
 
+    /* Position and style the image perfectly for mobile/tablet */
     .hero-image {
         width: 100%;
-        right: -7%;
-        opacity: 0.32;
+        left: -18%;
+        top: -35px;
+        opacity: 0.3;
+        object-fit: cover;
+        object-position: left center;
+    }
+
+    /* Adjust gradient for better text legibility */
+    .hero-overlay {
+        background: linear-gradient(
+            135deg,
+            rgba(4, 11, 20, 0.98) 0%,
+            rgba(4, 11, 20, 0.65) 15%,
+            rgba(4, 11, 20, 0.4) 40%
+        );
     }
 
     .hero-name {
-        font-size: clamp(35px, 10vw, 47px);
+        font-size: clamp(32px, 9vw, 45px);
         letter-spacing: -1px;
-    }
-
-    .hero-label {
-        font-size: 10px;
-        letter-spacing: 1.8px;
     }
 
     .hero-intro {
@@ -1643,6 +1666,22 @@ textarea:focus-visible {
 
     .hero-description {
         font-size: 14px;
+        line-height: 1.7;
+    }
+
+    /* Ensure buttons stay side-by-side on mobile */
+    .hero-actions {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .hero-actions .button {
+        flex: 1;
+        font-size: 11px;
+        padding: 10px 5px;
+        white-space: nowrap;
     }
 
     .hero-quote {
@@ -1651,8 +1690,7 @@ textarea:focus-visible {
 
     .about-grid,
     .skills-grid,
-    .resume-grid,
-    .contact-grid {
+    .resume-grid {
         grid-template-columns: 1fr;
     }
 
@@ -1661,24 +1699,24 @@ textarea:focus-visible {
     }
 
     .statistics-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
 
     .stat-card {
-        padding: 15px 12px;
+        padding: 18px 15px;
     }
 
     .stat-number {
-        font-size: 23px;
+        font-size: 28px;
     }
 
     .stat-card h3 {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .stat-card p {
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .project-gallery,
@@ -1688,19 +1726,7 @@ textarea:focus-visible {
     }
 
     .gallery-project {
-        height: 300px;
-    }
-
-    .gallery-overlay {
-        padding: 20px;
-    }
-
-    .gallery-overlay h3 {
-        font-size: 20px;
-    }
-
-    .gallery-overlay p {
-        font-size: 12px;
+        height: 280px;
     }
 
     .projects-footer {
@@ -1710,26 +1736,12 @@ textarea:focus-visible {
 
     .testimonial-slide {
         flex-basis: 100%;
-        padding-inline: 5px;
+        padding-inline: 0;
     }
 
     .testimonial-card {
         min-height: 175px;
         padding: 22px;
-    }
-
-    .testimonial-text {
-        font-size: 14px;
-    }
-
-    .testimonial-person img {
-        width: 75px;
-        height: 75px;
-    }
-
-    .interest-item {
-        min-height: 60px;
-        padding: 10px 13px;
     }
 
     .form-row {
@@ -1741,8 +1753,18 @@ textarea:focus-visible {
         padding: 19px;
     }
 
-    .map-card iframe {
-        height: 210px;
+    /* Contact Actions Alignment for Mobile */
+    .form-actions {
+        flex-direction: row; /* Keep buttons on the same line */
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .form-actions .button {
+        flex: 1;
+        padding: 12px 8px;
+        font-size: 12px;
+        white-space: nowrap;
     }
 
     .back-to-top {

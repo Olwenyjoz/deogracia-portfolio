@@ -1,4 +1,3 @@
-
 /* Wait until the page is ready */
 document.addEventListener("DOMContentLoaded", () => {
     // Select page elements
@@ -31,7 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Open and close the mobile navigation menu
     if (menuToggle && sidebar) {
-        menuToggle.addEventListener("click", () => {
+        menuToggle.addEventListener("click", (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            
             const isOpen = sidebar.classList.toggle("open");
 
             document.body.classList.toggle("menu-open", isOpen);
