@@ -1640,7 +1640,7 @@ textarea:focus-visible {
     /* Mobile Image Styling */
     .hero-image {
         width: 140%;
-        left: -20%;
+        left: -15%;
         top: 0;
         height: 110%; /* Stretch slightly to avoid empty edges */
         opacity: 0.25; /* Fainter for better text contrast */
@@ -1664,7 +1664,7 @@ textarea:focus-visible {
         position: relative;
         z-index: 2;
         width: 100%;
-        margin-top: 40px; /* Spaces text from the menu button */
+        margin-top: 80px; /* Spaces text from the menu button */
         padding: 0;
     }
 
