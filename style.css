@@ -189,16 +189,16 @@ textarea:focus-visible {
     position: fixed;
     z-index: 1200;
     top: 15px;
-    right: 80px; /* Leaves room for mobile hamburger */
+    right: 80px; 
     display: flex;
     align-items: center;
-    gap: 8px; /* Reduced gap between buttons */
+    gap: 8px; 
 }
 
 .theme-toggle {
     display: flex;
-    width: 38px;  /* Reduced from 45px */
-    height: 38px; /* Reduced from 45px */
+    width: 36px;  
+    height: 36px; 
     align-items: center;
     justify-content: center;
     border-radius: 50%;
@@ -206,8 +206,9 @@ textarea:focus-visible {
     background: var(--card-bg);
     color: var(--text);
     cursor: pointer;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    padding: 0; /* Forces no default padding */
 }
 
 .theme-toggle:hover {
@@ -217,26 +218,40 @@ textarea:focus-visible {
 }
 
 .theme-toggle i {
-    font-size: 16px; /* Reduced from 20px */
+    font-size: 15px; 
+    line-height: 1;
 }
 
 .language-selector select {
-    height: 38px; /* Reduced from 45px */
-    padding: 0 12px; /* Reduced padding */
-    border-radius: 20px; /* Adjusted border radius for the smaller height */
+    height: 36px; 
+    padding: 0 10px; 
+    border-radius: 18px; 
     border: 1px solid var(--border);
     background: var(--card-bg);
     color: var(--text);
-    font-size: 12px; /* Reduced font size */
-    font-weight: 600;
+    font-size: 11px; 
+    font-weight: 700;
+    line-height: 1;
     cursor: pointer;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     outline: none;
     transition: all 0.3s ease;
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23149ddd%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 8px;
+    padding-right: 24px;
 }
 
 .language-selector select:hover {
     border-color: var(--blue);
+}
+
+body.dark-mode .language-selector select {
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2361c6f0%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
 }
 
 /* Sidebar */
@@ -1830,24 +1845,26 @@ body.dark-mode .skill-tags span {
     }
 
     .top-controls {
-        right: 75px;
-        top: 20px; /* Adjusted to align with the new height */
+        right: 70px;
+        top: 20px; 
         gap: 6px;
     }
     
     .theme-toggle {
-        width: 34px;
-        height: 34px;
+        width: 32px;
+        height: 32px;
     }
     
     .theme-toggle i {
-        font-size: 14px;
+        font-size: 13px;
     }
     
     .language-selector select {
-        height: 34px;
-        padding: 0 10px;
-        font-size: 11px;
+        height: 32px;
+        padding: 0 8px;
+        padding-right: 20px;
+        font-size: 10px;
+        background-position: right 6px center;
     }
 }
 
