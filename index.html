@@ -23,9 +23,28 @@
 </head>
 <body>
 
+    <!-- Top Right Controls (Theme & Language) -->
+    <div class="top-controls">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+            <i class="bi bi-moon-fill" id="theme-icon"></i>
+        </button>
+        <div class="language-selector">
+            <select id="language-select" aria-label="Select language">
+                <option value="en">ENG</option>
+                <option value="fr">FRE</option>
+                <option value="ru">RUS</option>
+            </select>
+        </div>
+    </div>
+
     <!-- Mobile menu button -->
     <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
         <i class="bi bi-list"></i>
+    </button>
+
+    <!-- Desktop Sidebar Toggle Button -->
+    <button class="desktop-sidebar-toggle" id="desktop-sidebar-toggle" aria-label="Toggle sidebar">
+        <i class="bi bi-chevron-right" id="toggle-icon"></i>
     </button>
 
     <!-- Sidebar -->
@@ -51,25 +70,23 @@
 
         <!-- Navigation -->
         <nav class="navigation" aria-label="Main navigation">
-            <a href="#home" class="nav-link active"><i class="bi bi-house-door-fill"></i><span>Home</span></a>
-            <a href="#about" class="nav-link"><i class="bi bi-person-badge-fill"></i><span>About</span></a>
-            <a href="#statistics" class="nav-link"><i class="bi bi-graph-up-arrow"></i><span>Impact</span></a>
-            <a href="#skills" class="nav-link"><i class="bi bi-code-slash"></i><span>Skills</span></a>
-            <a href="#resume" class="nav-link"><i class="bi bi-file-earmark-person-fill"></i><span>Resume</span></a>
-            <a href="#projects" class="nav-link"><i class="bi bi-grid-1x2-fill"></i><span>Projects</span></a>
-            <a href="#leadership" class="nav-link"><i class="bi bi-people-fill"></i><span>Leadership</span></a>
-            <a href="#testimonials" class="nav-link"><i class="bi bi-chat-quote-fill"></i><span>Testimonials</span></a>
-            <a href="#interests" class="nav-link"><i class="bi bi-stars"></i><span>Interests</span></a>
-            <a href="#contact" class="nav-link"><i class="bi bi-envelope-paper-fill"></i><span>Contact</span></a>
+            <a href="#home" class="nav-link active"><i class="bi bi-house-door-fill"></i><span data-translate="nav-home">Home</span></a>
+            <a href="#about" class="nav-link"><i class="bi bi-person-badge-fill"></i><span data-translate="nav-about">About</span></a>
+            <a href="#skills" class="nav-link"><i class="bi bi-code-slash"></i><span data-translate="nav-skills">Skills</span></a>
+            <a href="#resume" class="nav-link"><i class="bi bi-file-earmark-person-fill"></i><span data-translate="nav-resume">Resume</span></a>
+            <a href="#projects" class="nav-link"><i class="bi bi-grid-1x2-fill"></i><span data-translate="nav-projects">Projects</span></a>
+            <a href="#leadership" class="nav-link"><i class="bi bi-people-fill"></i><span data-translate="nav-leadership">Leadership</span></a>
+            <a href="#interests" class="nav-link"><i class="bi bi-stars"></i><span data-translate="nav-interests">Interests</span></a>
+            <a href="#contact" class="nav-link"><i class="bi bi-envelope-paper-fill"></i><span data-translate="nav-contact">Contact</span></a>
         </nav>
 
         <div class="sidebar-footer">
-            <p>Building technology that makes a difference.</p>
+            <p data-translate="sidebar-footer">Building technology that makes a difference.</p>
         </div>
     </aside>
 
     <!-- Main content -->
-    <main class="main-content">
+    <main class="main-content" id="main-content">
 
         <!-- Hero -->
         <section class="hero section" id="home">
@@ -77,24 +94,24 @@
             <div class="hero-overlay"></div>
 
             <div class="hero-content">
-                <p class="hero-label">WELCOME TO MY PORTFOLIO</p>
+                <p class="hero-label" data-translate="hero-label">WELCOME TO MY PORTFOLIO</p>
                 <h1 class="hero-name">Deogracia Olweny</h1>
 
                 <p class="hero-intro">
-                    I'm a <span id="typed-role">Software Developer</span><span class="typing-cursor" aria-hidden="true">|</span>
+                    <span data-translate="hero-im">I'm a</span> <span id="typed-role" data-translate="hero-role">Software Developer</span><span class="typing-cursor" aria-hidden="true">|</span>
                 </p>
 
-                <p class="hero-description">
+                <p class="hero-description" data-translate="hero-desc">
                     I build practical digital solutions, develop user-centred applications,
                     and explore technology that creates meaningful impact.
                 </p>
 
                 <div class="hero-actions">
-                    <a href="#projects" class="button button-primary">Explore my work <i class="bi bi-arrow-up-right"></i></a>
-                    <a href="#contact" class="button button-outline">Let's connect</a>
+                    <a href="#projects" class="button button-primary" data-translate="hero-btn-work">Explore my work</a>
+                    <a href="#contact" class="button button-outline" data-translate="hero-btn-connect">Let's connect</a>
                 </div>
 
-                <blockquote class="hero-quote">
+                <blockquote class="hero-quote" data-translate="hero-quote">
                     "Great software begins with curiosity and grows through solving real problems."
                 </blockquote>
 
@@ -108,11 +125,11 @@
         <section class="section section-light" id="about">
             <div class="section-container">
                 <div class="section-heading">
-                    <h2>About Me</h2>
+                    <h2 data-translate="about-heading">About Me</h2>
                     <span class="heading-line"></span>
                 </div>
 
-                <p class="section-intro">
+                <p class="section-intro" data-translate="about-intro">
                     I am an Applied Computer Technology student at USIU-Africa with a strong interest
                     in software engineering, web development, databases, and practical technology solutions.
                 </p>
@@ -120,105 +137,34 @@
                 <div class="about-grid">
                     <div class="about-image-wrap">
                         <img src="assets/profile.png" alt="Portrait of Deogracia Olweny" class="about-image">
-                        <div class="image-caption"><i class="bi bi-code-square"></i><span>Learning. Building. Improving.</span></div>
+                        <div class="image-caption"><i class="bi bi-code-square"></i><span data-translate="about-caption">Learning. Building. Improving.</span></div>
                     </div>
 
                     <div class="about-content">
-                        <h3>Software Developer in Progress</h3>
-                        <p>
+                        <h3 data-translate="about-title">Software Developer in Progress</h3>
+                        <p data-translate="about-p1">
                             My journey combines technical learning with hands-on projects, leadership,
                             and community engagement. I enjoy turning ideas into useful digital experiences
                             and continuously improving my development skills.
                         </p>
 
                         <div class="about-details">
-                            <div class="detail-item"><i class="bi bi-mortarboard-fill"></i><div><strong>Education:</strong> <span>BSc. Applied Computer Technology</span></div></div>
-                            <div class="detail-item"><i class="bi bi-building"></i><div><strong>University:</strong> <span>USIU-Africa</span></div></div>
-                            <div class="detail-item"><i class="bi bi-geo-alt-fill"></i><div><strong>Location:</strong> <span>Nairobi, Kenya</span></div></div>
-                            <div class="detail-item"><i class="bi bi-code-square"></i><div><strong>Focus:</strong> <span>Software and web development</span></div></div>
-                            <div class="detail-item"><i class="bi bi-translate"></i><div><strong>Languages:</strong> <span>English, Kiswahili</span></div></div>
-                            <div class="detail-item"><i class="bi bi-envelope-fill"></i><div><strong>Email:</strong> <span>deograciaolweny@gmail.com</span></div></div>
+                            <div class="detail-item"><i class="bi bi-mortarboard-fill"></i><div><strong data-translate="detail-edu">Education:</strong> <span data-translate="detail-edu-val">BSc. Applied Computer Technology</span></div></div>
+                            <div class="detail-item"><i class="bi bi-building"></i><div><strong data-translate="detail-uni">University:</strong> <span data-translate="detail-uni-val">USIU-Africa</span></div></div>
+                            <div class="detail-item"><i class="bi bi-geo-alt-fill"></i><div><strong data-translate="detail-loc">Location:</strong> <span data-translate="detail-loc-val">Nairobi, Kenya</span></div></div>
+                            <div class="detail-item"><i class="bi bi-code-square"></i><div><strong data-translate="detail-focus">Focus:</strong> <span data-translate="detail-focus-val">Software and web development</span></div></div>
+                            <div class="detail-item"><i class="bi bi-translate"></i><div><strong data-translate="detail-lang">Languages:</strong> <span data-translate="detail-lang-val">English, Kiswahili</span></div></div>
+                            <div class="detail-item"><i class="bi bi-envelope-fill"></i><div><strong data-translate="detail-email">Email:</strong> <span data-translate="detail-email-val">deograciaolweny@gmail.com</span></div></div>
                         </div>
 
-                        <p>
+                        <p data-translate="about-p2">
                             Beyond coding, I value teamwork, leadership, digital literacy, and using
                             technology to create opportunities for underserved communities.
                         </p>
 
-                        <a href="#contact" class="text-link">Let's work together <i class="bi bi-arrow-up-right"></i></a>
+                        <a href="#contact" class="text-link" data-translate="about-link">Let's work together</a>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Impact statistics -->
-        <section class="section statistics-section" id="statistics">
-            <div class="section-container">
-                <div class="section-heading">
-                    <h2>My Impact in Numbers</h2>
-                    <span class="heading-line"></span>
-                </div>
-
-                <p class="section-intro">
-                    My journey combines technology, leadership, digital skills training,
-                    and community-driven initiatives to create meaningful impact.
-                </p>
-
-                <div class="statistics-grid">
-                    <article class="stat-card">
-                        <div class="stat-icon">
-                            <i class="bi bi-people-fill"></i>
-                        </div>
-                        <div class="stat-number">60+</div>
-                        <h3>Learners Supported</h3>
-                        <p>
-                            Supported digital literacy and computer skills learning
-                            through my work at Alliance Centre of Technology.
-                        </p>
-                    </article>
-
-                    <article class="stat-card">
-                        <div class="stat-icon">
-                            <i class="bi bi-code-slash"></i>
-                        </div>
-                        <div class="stat-number">6+</div>
-                        <h3>Technology Projects</h3>
-                        <p>
-                            Building practical solutions in web development,
-                            software engineering, data, and community technology.
-                        </p>
-                    </article>
-
-                    <article class="stat-card">
-                        <div class="stat-icon">
-                            <i class="bi bi-person-workspace"></i>
-                        </div>
-                        <div class="stat-number">2+</div>
-                        <h3>Digital Skills Initiatives</h3>
-                        <p>
-                            Contributing to digital inclusion through training,
-                            peer learning, and community-focused technology initiatives.
-                        </p>
-                    </article>
-
-                    <article class="stat-card">
-                        <div class="stat-icon">
-                            <i class="bi bi-award-fill"></i>
-                        </div>
-                        <div class="stat-number">4</div>
-                        <h3>Cultural Week Trophies</h3>
-                        <p>
-                            Led the cultural week committee for the Sudanese and
-                            South Sudanese Students Association, contributing to
-                            a team that won four trophies.
-                        </p>
-                    </article>
-                </div>
-
-                <p class="statistics-note">
-                    These figures reflect selected milestones from my journey.
-                    Project and learner totals should be verified before publication.
-                </p>
             </div>
         </section>
 
@@ -226,32 +172,32 @@
         <section class="section" id="skills">
             <div class="section-container">
                 <div class="section-heading">
-                    <h2>Technical Skills</h2>
+                    <h2 data-translate="skills-heading">Technical Skills</h2>
                     <span class="heading-line"></span>
                 </div>
 
-                <p class="section-intro">
+                <p class="section-intro" data-translate="skills-intro">
                     Technologies and practical skills I use, practise, or am actively developing.
                     Skill levels are self-assessments rather than formal test results.
                 </p>
 
                 <div class="skills-grid">
                     <div class="skill-card">
-                        <div class="skill-card-heading"><i class="bi bi-window-stack"></i><h3>Frontend Development</h3></div>
+                        <div class="skill-card-heading"><i class="bi bi-window-stack"></i><h3 data-translate="skills-frontend">Frontend Development</h3></div>
                         <div class="skill-item"><div class="skill-label"><span>HTML</span><span>95%</span></div><div class="skill-track"><span style="width:95%"></span></div></div>
                         <div class="skill-item"><div class="skill-label"><span>CSS</span><span>90%</span></div><div class="skill-track"><span style="width:90%"></span></div></div>
                         <div class="skill-item"><div class="skill-label"><span>JavaScript</span><span>70%</span></div><div class="skill-track"><span style="width:70%"></span></div></div>
                     </div>
 
                     <div class="skill-card">
-                        <div class="skill-card-heading"><i class="bi bi-database-fill-gear"></i><h3>Backend & Databases</h3></div>
+                        <div class="skill-card-heading"><i class="bi bi-database-fill-gear"></i><h3 data-translate="skills-backend">Backend & Databases</h3></div>
                         <div class="skill-item"><div class="skill-label"><span>Python</span><span>80%</span></div><div class="skill-track"><span style="width:80%"></span></div></div>
                         <div class="skill-item"><div class="skill-label"><span>SQL / SQLite</span><span>80%</span></div><div class="skill-track"><span style="width:80%"></span></div></div>
                         <div class="skill-item"><div class="skill-label"><span>Django / FastAPI</span><span>75%</span></div><div class="skill-track"><span style="width:75%"></span></div></div>
                     </div>
 
                     <div class="skill-card">
-                        <div class="skill-card-heading"><i class="bi bi-git"></i><h3>Tools & Workflow</h3></div>
+                        <div class="skill-card-heading"><i class="bi bi-git"></i><h3 data-translate="skills-tools">Tools & Workflow</h3></div>
                         <div class="skill-item"><div class="skill-label"><span>Git & GitHub</span><span>90%</span></div><div class="skill-track"><span style="width:90%"></span></div></div>
                         <div class="skill-item"><div class="skill-label"><span>VS Code</span><span>100%</span></div><div class="skill-track"><span style="width:100%"></span></div></div>
                         <div class="skill-item"><div class="skill-label"><span>Debugging</span><span>80%</span></div><div class="skill-track"><span style="width:80%"></span></div></div>
@@ -260,21 +206,21 @@
                     <div class="skill-card">
                     <div class="skill-card-heading">
                         <i class="bi bi-pc-display-horizontal"></i>
-                        <h3>IT & Professional Skills</h3>
+                        <h3 data-translate="skills-it">IT & Professional Skills</h3>
                     </div>
                     
                     <div class="skill-tags">
-                        <span>Windows installation</span>
-                        <span>IT support</span>
-                        <span>Hardware troubleshooting</span>
-                        <span>Microsoft Office</span>
-                        <span>Digital literacy</span>
-                        <span>Team leadership</span>
-                        <span>Communication</span>
-                        <span>Networking fundamentals</span>
-                        <span>Graphic Design</span>
-                        <span>Software installation & configuration</span>
-                        <span>Technical documentation</span>
+                        <span data-translate="tag-win">Windows installation</span>
+                        <span data-translate="tag-support">IT support</span>
+                        <span data-translate="tag-hardware">Hardware troubleshooting</span>
+                        <span data-translate="tag-office">Microsoft Office</span>
+                        <span data-translate="tag-digital">Digital literacy</span>
+                        <span data-translate="tag-team">Team leadership</span>
+                        <span data-translate="tag-comm">Communication</span>
+                        <span data-translate="tag-network">Networking fundamentals</span>
+                        <span data-translate="tag-design">Graphic Design</span>
+                        <span data-translate="tag-software">Software installation & configuration</span>
+                        <span data-translate="tag-techdoc">Technical documentation</span>
                     </div>
                     </div>
                 </div>
@@ -286,88 +232,87 @@
             <div class="section-container">
                 
                 <div class="section-heading resume-heading">
-                    <h2>Resume</h2>
+                    <h2 data-translate="resume-heading">Resume</h2>
  
                 <a href="assets/Deogracia_Olweny_CV.pdf"  class="view-cv-button" 
                 target="_blank"  rel="noopener noreferrer">
-                    <i class="bi bi-eye"></i> View CV
+                    <i class="bi bi-eye"></i> <span data-translate="resume-btn">View CV</span>
                 </a>
 
                     <span class="heading-line"></span>
                 </div>
 
-
-                <p class="section-intro">My education, experience, and training reflect a commitment to learning, technical growth, and community contribution.</p>
+                <p class="section-intro" data-translate="resume-intro">My education, experience, and training reflect a commitment to learning, technical growth, and community contribution.</p>
 
                 <div class="resume-grid">
                     <div class="resume-column">
-                        <h3 class="resume-column-title">Education</h3>
+                        <h3 class="resume-column-title" data-translate="resume-edu">Education</h3>
 
                         <article class="resume-item">
-                            <h4>BSc Applied Computer Technology</h4>
-                            <span class="resume-date">Ongoing</span>
-                            <p class="resume-place">United States International University-Africa</p>
-                            <p>Learning software development, systems analysis, databases, programming, and emerging technologies.</p>
+                            <h4 data-translate="resume-edu1-title">BSc Applied Computer Technology</h4>
+                            <span class="resume-date" data-translate="resume-edu1-date">Ongoing</span>
+                            <p class="resume-place" data-translate="resume-edu1-place">United States International University-Africa</p>
+                            <p data-translate="resume-edu1-desc">Learning software development, systems analysis, databases, programming, and emerging technologies.</p>
                         </article>
 
                         <article class="resume-item">
-                            <h4>Kenya Certificate of Secondary Education</h4>
-                            <span class="resume-date">2022</span>
-                            <p class="resume-place">Butula Boys' Secondary School</p>
-                            <p>Completed secondary education with a B+ grade.</p>
+                            <h4 data-translate="resume-edu2-title">Kenya Certificate of Secondary Education</h4>
+                            <span class="resume-date" data-translate="resume-edu2-date">2022</span>
+                            <p class="resume-place" data-translate="resume-edu2-place">Butula Boys' Secondary School</p>
+                            <p data-translate="resume-edu2-desc">Completed secondary education with a B+ grade.</p>
                         </article>
 
-                        <h3 class="resume-column-title">Training</h3>
+                        <h3 class="resume-column-title" data-translate="resume-training">Training</h3>
 
                         <article class="resume-item">
-                            <h4>Odoo University Training Program</h4>
-                            <span class="resume-date">2025</span>
-                            <p>Exposure to ERP workflows in sales, purchasing, inventory, project management, accounting, and human resources.</p>
+                            <h4 data-translate="resume-train1-title">Odoo University Training Program</h4>
+                            <span class="resume-date" data-translate="resume-train1-date">2025</span>
+                            <p data-translate="resume-train1-desc">Exposure to ERP workflows in sales, purchasing, inventory, project management, accounting, and human resources.</p>
                         </article>
 
                         <article class="resume-item">
-                            <h4>Peer-to-Peer Digital Literacy</h4>
-                            <span class="resume-date">2025</span>
-                            <p class="resume-place">Angaza Center Foundation</p>
-                            <p>Supported digital literacy learning in a virtual volunteer setting.</p>
+                            <h4 data-translate="resume-train2-title">Peer-to-Peer Digital Literacy</h4>
+                            <span class="resume-date" data-translate="resume-train2-date">2025</span>
+                            <p class="resume-place" data-translate="resume-train2-place">Angaza Center Foundation</p>
+                            <p data-translate="resume-train2-desc">Supported digital literacy learning in a virtual volunteer setting.</p>
                         </article>
                     </div>
 
                     <div class="resume-column">
-                        <h3 class="resume-column-title">Experience</h3>
+                        <h3 class="resume-column-title" data-translate="resume-exp">Experience</h3>
 
                         <article class="resume-item">
-                            <h4>Computer Basics Facilitator</h4>
-                            <span class="resume-date">2024</span>
-                            <p class="resume-place">Alliance Centre of Technology, Kakuma</p>
+                            <h4 data-translate="resume-exp1-title">Computer Basics Facilitator</h4>
+                            <span class="resume-date" data-translate="resume-exp1-date">2024</span>
+                            <p class="resume-place" data-translate="resume-exp1-place">Alliance Centre of Technology, Kakuma</p>
                             <ul>
-                                <li>Trained more than 60 learners in computer fundamentals.</li>
-                                <li>Assisted with Windows, Office applications, drivers, and printers.</li>
-                                <li>Provided first-level technical support.</li>
+                                <li data-translate="resume-exp1-li1">Trained more than 60 learners in computer fundamentals.</li>
+                                <li data-translate="resume-exp1-li2">Assisted with Windows, Office applications, drivers, and printers.</li>
+                                <li data-translate="resume-exp1-li3">Provided first-level technical support.</li>
                             </ul>
                         </article>
 
                         <article class="resume-item">
-                            <h4>Enumerator</h4>
-                            <span class="resume-date">2023</span>
-                            <p class="resume-place">EXPO Marketing / SNV-WEEE Centre</p>
-                            <p>Contributed to field data collection and related project activities.</p>
+                            <h4 data-translate="resume-exp2-title">Enumerator</h4>
+                            <span class="resume-date" data-translate="resume-exp2-date">2023</span>
+                            <p class="resume-place" data-translate="resume-exp2-place">EXPO Marketing / SNV-WEEE Centre</p>
+                            <p data-translate="resume-exp2-desc">Contributed to field data collection and related project activities.</p>
                         </article>
 
-                        <h3 class="resume-column-title">Leadership</h3>
+                        <h3 class="resume-column-title" data-translate="resume-lead">Leadership</h3>
 
                         <article class="resume-item">
-                            <h4>Co-founder & Secretary</h4>
-                            <span class="resume-date">2026</span>
-                            <p class="resume-place">Technova Digital Hub</p>
-                            <p>Supporting community digital skills and technology access.</p>
+                            <h4 data-translate="resume-lead1-title">Co-founder & Secretary</h4>
+                            <span class="resume-date" data-translate="resume-lead1-date">2026</span>
+                            <p class="resume-place" data-translate="resume-lead1-place">Technova Digital Hub</p>
+                            <p data-translate="resume-lead1-desc">Supporting community digital skills and technology access.</p>
                         </article>
 
                         <article class="resume-item">
-                            <h4>Co-founder</h4>
-                            <span class="resume-date">2025 - Present</span>
-                            <p class="resume-place">UNIMART Africa</p>
-                            <p>Contributed to an e-commerce platform and its digital experience.</p>
+                            <h4 data-translate="resume-lead2-title">Co-founder</h4>
+                            <span class="resume-date" data-translate="resume-lead2-date">2025 - Present</span>
+                            <p class="resume-place" data-translate="resume-lead2-place">UNIMART Africa</p>
+                            <p data-translate="resume-lead2-desc">Contributed to an e-commerce platform and its digital experience.</p>
                         </article>
                     </div>
                 </div>
@@ -379,11 +324,11 @@
         <section class="section projects-section" id="projects">
             <div class="section-container">
                 <div class="section-heading">
-                    <h2>Featured Projects</h2>
+                    <h2 data-translate="projects-heading">Featured Projects</h2>
                     <span class="heading-line"></span>
                 </div>
 
-                <p class="section-intro">
+                <p class="section-intro" data-translate="projects-intro">
                     Explore my work in mobile and web development, graphic design,
                     and community initiatives. Hover over a project or focus on it
                     using your keyboard to reveal more information and project links.
@@ -392,22 +337,22 @@
                 <!-- Project category filters -->
                 <div class="project-filters" role="group" aria-label="Filter projects by category">
                     <button type="button" class="project-filter active" data-filter="all" aria-pressed="true">
-                        <i class="bi bi-grid-fill"></i> All
+                        <i class="bi bi-grid-fill"></i> <span data-translate="filter-all">All</span>
                     </button>
                     <button type="button" class="project-filter" data-filter="app" aria-pressed="false">
-                        <i class="bi bi-phone-fill"></i> App Development
+                        <i class="bi bi-phone-fill"></i> <span data-translate="filter-app">App Development</span>
                     </button>
                     <button type="button" class="project-filter" data-filter="web" aria-pressed="false">
-                        <i class="bi bi-code-slash"></i> Web Development
+                        <i class="bi bi-code-slash"></i> <span data-translate="filter-web">Web Development</span>
                     </button>
                     <button type="button" class="project-filter" data-filter="graphic" aria-pressed="false">
-                        <i class="bi bi-palette-fill"></i> Graphic Design
+                        <i class="bi bi-palette-fill"></i> <span data-translate="filter-graphic">Graphic Design</span>
                     </button>
                     <button type="button" class="project-filter" data-filter="community" aria-pressed="false">
-                        <i class="bi bi-people-fill"></i> Community
+                        <i class="bi bi-people-fill"></i> <span data-translate="filter-community">Community</span>
                     </button>
                     <button type="button" class="project-filter" data-filter="more" aria-pressed="false">
-                        <i class="bi bi-three-dots"></i> More Projects
+                        <i class="bi bi-three-dots"></i> <span data-translate="filter-more">More Projects</span>
                     </button>
                 </div>
 
@@ -418,22 +363,22 @@
                     <article class="gallery-project" data-category="app">
                         <img src="assets/projects/FoodOderingApp.png" alt="FoodOrderingApp mobile application interface" loading="lazy">
                         <div class="gallery-overlay">
-                            <span class="gallery-category">Mobile application</span>
-                            <h3>FoodOrderingApp</h3>
-                            <p>An Android food-ordering application with product listings, cart management, order summaries, and navigation.</p>
+                            <span class="gallery-category" data-translate="proj-cat-app">Mobile application</span>
+                            <h3 data-translate="proj1-title">FoodOrderingApp</h3>
+                            <p data-translate="proj1-desc">An Android food-ordering application with product listings, cart management, order summaries, and navigation.</p>
                             <div class="gallery-tags"><span>Java</span><span>XML</span><span>Android</span></div>
-                            <a href="https://github.com/Olwenyjoz" target="_blank" rel="noopener noreferrer" class="gallery-cta">View project <i class="bi bi-arrow-up-right"></i></a>
+                            <a href="https://github.com/Olwenyjoz" target="_blank" rel="noopener noreferrer" class="gallery-cta" data-translate="proj-cta">View project <i class="bi bi-arrow-up-right"></i></a>
                         </div>
                     </article>
 
                     <article class="gallery-project" data-category="app">
                         <img src="assets/projects/MediTrackApp.jpeg" alt="MediTrack clinic management application concept" loading="lazy">
                         <div class="gallery-overlay">
-                            <span class="gallery-category">Healthcare application</span>
-                            <h3>MediTrack App</h3>
-                            <p>A healthcare application concept focused on making clinic workflows and patient-related operations easier to manage.</p>
+                            <span class="gallery-category" data-translate="proj-cat-health-app">Healthcare application</span>
+                            <h3 data-translate="proj2-title">MediTrack App</h3>
+                            <p data-translate="proj2-desc">A healthcare application concept focused on making clinic workflows and patient-related operations easier to manage.</p>
                             <div class="gallery-tags"><span>Application design</span><span>Healthcare</span></div>
-                            <a href="https://github.com/Olwenyjoz" target="_blank" rel="noopener noreferrer" class="gallery-cta">View project <i class="bi bi-arrow-up-right"></i></a>
+                            <a href="https://github.com/Olwenyjoz" target="_blank" rel="noopener noreferrer" class="gallery-cta" data-translate="proj-cta">View project <i class="bi bi-arrow-up-right"></i></a>
                         </div>
                     </article>
 
@@ -441,11 +386,11 @@
                     <article class="gallery-project" data-category="web">
                         <img src="assets/projects/Unimart.jpeg" alt="UNIMART Africa e-commerce branding" loading="lazy">
                         <div class="gallery-overlay">
-                            <span class="gallery-category">E-commerce</span>
-                            <h3>UNIMART Africa</h3>
-                            <p>An online shopping platform connecting buyers and sellers. My work includes frontend UI Contribution, usability testing and customer support.</p>
+                            <span class="gallery-category" data-translate="proj-cat-ecom">E-commerce</span>
+                            <h3 data-translate="proj3-title">UNIMART Africa</h3>
+                            <p data-translate="proj3-desc">An online shopping platform connecting buyers and sellers. My work includes frontend UI Contribution, usability testing and customer support.</p>
                             <div class="gallery-tags"><span>Frontend UI</span><span>Usability Testing</span><span>Support</span></div>
-                            <a href="https://unimartafrica.com" target="_blank" rel="noopener noreferrer" class="gallery-cta">View project <i class="bi bi-arrow-up-right"></i></a>
+                            <a href="https://unimartafrica.com" target="_blank" rel="noopener noreferrer" class="gallery-cta" data-translate="proj-cta">View project <i class="bi bi-arrow-up-right"></i></a>
                         </div>
                     </article>
 
@@ -453,33 +398,33 @@
                     <article class="gallery-project" data-category="web">
                         <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="Healthcare technology representing MediTrack" loading="lazy">
                         <div class="gallery-overlay">
-                            <span class="gallery-category">Healthcare software</span>
-                            <h3>MediTrack</h3>
-                            <p>A clinic management system built with FastAPI to explore digital workflows for healthcare records and clinic operations.</p>
+                            <span class="gallery-category" data-translate="proj-cat-health-soft">Healthcare software</span>
+                            <h3 data-translate="proj4-title">MediTrack</h3>
+                            <p data-translate="proj4-desc">A clinic management system built with FastAPI to explore digital workflows for healthcare records and clinic operations.</p>
                             <div class="gallery-tags"><span>Python</span><span>FastAPI</span><span>Database</span></div>
-                            <a href="https://github.com/Olwenyjoz" target="_blank" rel="noopener noreferrer" class="gallery-cta">View project <i class="bi bi-arrow-up-right"></i></a>
+                            <a href="https://github.com/Olwenyjoz" target="_blank" rel="noopener noreferrer" class="gallery-cta" data-translate="proj-cta">View project <i class="bi bi-arrow-up-right"></i></a>
                         </div>
                     </article>
 
                     <article class="gallery-project" data-category="web">
                         <img src="assets/projects/Uphead_Student_Planner.png" alt="UpAhead Student Planner dashboard" loading="lazy">
                         <div class="gallery-overlay">
-                            <span class="gallery-category">Productivity</span>
-                            <h3>UpAhead Student Planner</h3>
-                            <p>A student planner designed to organise assignments, track academic progress, manage deadlines, and support study routines.</p>
+                            <span class="gallery-category" data-translate="proj-cat-prod">Productivity</span>
+                            <h3 data-translate="proj5-title">UpAhead Student Planner</h3>
+                            <p data-translate="proj5-desc">A student planner designed to organise assignments, track academic progress, manage deadlines, and support study routines.</p>
                             <div class="gallery-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-                            <a href="https://github.com/Olwenyjoz" target="_blank" rel="noopener noreferrer" class="gallery-cta">View project <i class="bi bi-arrow-up-right"></i></a>
+                            <a href="https://github.com/Olwenyjoz" target="_blank" rel="noopener noreferrer" class="gallery-cta" data-translate="proj-cta">View project <i class="bi bi-arrow-up-right"></i></a>
                         </div>
                     </article>
 
                     <article class="gallery-project" data-category="web">
                         <img src="assets/projects/Developer_Portfolio.png" alt="Personal developer portfolio website" loading="lazy">
                         <div class="gallery-overlay">
-                            <span class="gallery-category">Personal website</span>
-                            <h3>Developer Portfolio</h3>
-                            <p>A responsive portfolio showcasing my technical skills, projects, experience, leadership, and contact information.</p>
+                            <span class="gallery-category" data-translate="proj-cat-web">Personal website</span>
+                            <h3 data-translate="proj6-title">Developer Portfolio</h3>
+                            <p data-translate="proj6-desc">A responsive portfolio showcasing my technical skills, projects, experience, leadership, and contact information.</p>
                             <div class="gallery-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-                            <a href="#home" class="gallery-cta">Explore portfolio <i class="bi bi-arrow-up-right"></i></a>
+                            <a href="#home" class="gallery-cta" data-translate="proj-cta">Explore portfolio <i class="bi bi-arrow-up-right"></i></a>
                         </div>
                     </article>
 
@@ -487,66 +432,66 @@
                     <article class="gallery-project" data-category="graphic">
                         <img src="assets/projects/GraphicDesign_BusinessCard.jpeg" alt="Graphic design business card" loading="lazy">
                         <div class="gallery-overlay">
-                            <span class="gallery-category">Brand identity</span>
-                            <h3>Business Card Design</h3>
-                            <p>A business card design combining contact details, branding, and a clear visual layout.</p>
+                            <span class="gallery-category" data-translate="proj-cat-brand">Brand identity</span>
+                            <h3 data-translate="proj7-title">Business Card Design</h3>
+                            <p data-translate="proj7-desc">A business card design combining contact details, branding, and a clear visual layout.</p>
                             <div class="gallery-tags"><span>Graphic Design</span><span>Branding</span></div>
-                            <a href="assets/projects/GraphicDesign_BusinessCard.jpeg" target="_blank" rel="noopener noreferrer" class="gallery-cta">View design <i class="bi bi-arrow-up-right"></i></a>
+                            <a href="assets/projects/GraphicDesign_BusinessCard.jpeg" target="_blank" rel="noopener noreferrer" class="gallery-cta" data-translate="proj-cta">View design <i class="bi bi-arrow-up-right"></i></a>
                         </div>
                     </article>
 
                     <article class="gallery-project" data-category="graphic">
                         <img src="assets/projects/GraphicDesign_Logo1.jpeg" alt="Graphic design logo concept one" loading="lazy">
                         <div class="gallery-overlay">
-                            <span class="gallery-category">Logo design</span>
-                            <h3>Logo Design 01</h3>
-                            <p>A visual identity concept exploring shape, colour, and brand recognition.</p>
+                            <span class="gallery-category" data-translate="proj-cat-logo">Logo design</span>
+                            <h3 data-translate="proj8-title">Logo Design 01</h3>
+                            <p data-translate="proj8-desc">A visual identity concept exploring shape, colour, and brand recognition.</p>
                             <div class="gallery-tags"><span>Logo</span><span>Brand Identity</span></div>
-                            <a href="assets/projects/GraphicDesign_Logo1.jpeg" target="_blank" rel="noopener noreferrer" class="gallery-cta">View design <i class="bi bi-arrow-up-right"></i></a>
+                            <a href="assets/projects/GraphicDesign_Logo1.jpeg" target="_blank" rel="noopener noreferrer" class="gallery-cta" data-translate="proj-cta">View design <i class="bi bi-arrow-up-right"></i></a>
                         </div>
                     </article>
 
                     <article class="gallery-project" data-category="graphic">
                         <img src="assets/projects/GrpahicDesign_Logo2.jpeg" alt="Graphic design logo concept two" loading="lazy">
                         <div class="gallery-overlay">
-                            <span class="gallery-category">Logo design</span>
-                            <h3>Logo Design 02</h3>
-                            <p>A second logo concept demonstrating visual identity and graphic composition.</p>
+                            <span class="gallery-category" data-translate="proj-cat-logo">Logo design</span>
+                            <h3 data-translate="proj9-title">Logo Design 02</h3>
+                            <p data-translate="proj9-desc">A second logo concept demonstrating visual identity and graphic composition.</p>
                             <div class="gallery-tags"><span>Logo</span><span>Branding</span></div>
-                            <a href="assets/projects/GrpahicDesign_Logo2.jpeg" target="_blank" rel="noopener noreferrer" class="gallery-cta">View design <i class="bi bi-arrow-up-right"></i></a>
+                            <a href="assets/projects/GrpahicDesign_Logo2.jpeg" target="_blank" rel="noopener noreferrer" class="gallery-cta" data-translate="proj-cta">View design <i class="bi bi-arrow-up-right"></i></a>
                         </div>
                     </article>
 
                     <article class="gallery-project" data-category="graphic">
                         <img src="assets/projects/GraphicDesign_Logo3.jpeg" alt="Graphic design logo concept three" loading="lazy">
                         <div class="gallery-overlay">
-                            <span class="gallery-category">Logo design</span>
-                            <h3>Logo Design 03</h3>
-                            <p>A logo design exploring distinctive forms and a memorable brand presentation.</p>
+                            <span class="gallery-category" data-translate="proj-cat-logo">Logo design</span>
+                            <h3 data-translate="proj10-title">Logo Design 03</h3>
+                            <p data-translate="proj10-desc">A logo design exploring distinctive forms and a memorable brand presentation.</p>
                             <div class="gallery-tags"><span>Logo</span><span>Visual Design</span></div>
-                            <a href="assets/projects/GraphicDesign_Logo3.jpeg" target="_blank" rel="noopener noreferrer" class="gallery-cta">View design <i class="bi bi-arrow-up-right"></i></a>
+                            <a href="assets/projects/GraphicDesign_Logo3.jpeg" target="_blank" rel="noopener noreferrer" class="gallery-cta" data-translate="proj-cta">View design <i class="bi bi-arrow-up-right"></i></a>
                         </div>
                     </article>
 
                     <article class="gallery-project" data-category="graphic">
                         <img src="assets/projects/GraphicDesign_Poster.jpeg" alt="Graphic design promotional poster" loading="lazy">
                         <div class="gallery-overlay">
-                            <span class="gallery-category">Poster design</span>
-                            <h3>Promotional Poster</h3>
-                            <p>A promotional poster using visual hierarchy, typography, and colour to communicate a message.</p>
+                            <span class="gallery-category" data-translate="proj-cat-poster">Poster design</span>
+                            <h3 data-translate="proj11-title">Promotional Poster</h3>
+                            <p data-translate="proj11-desc">A promotional poster using visual hierarchy, typography, and colour to communicate a message.</p>
                             <div class="gallery-tags"><span>Poster</span><span>Typography</span></div>
-                            <a href="assets/projects/GraphicDesign_Poster.jpeg" target="_blank" rel="noopener noreferrer" class="gallery-cta">View design <i class="bi bi-arrow-up-right"></i></a>
+                            <a href="assets/projects/GraphicDesign_Poster.jpeg" target="_blank" rel="noopener noreferrer" class="gallery-cta" data-translate="proj-cta">View design <i class="bi bi-arrow-up-right"></i></a>
                         </div>
                     </article>
 
                     <article class="gallery-project" data-category="graphic">
                         <img src="assets/projects/GraphicDesing_Menu.jpeg" alt="Graphic design menu layout" loading="lazy">
                         <div class="gallery-overlay">
-                            <span class="gallery-category">Menu design</span>
-                            <h3>Menu Design</h3>
-                            <p>A food menu layout that presents products and prices in a clear, visually appealing format.</p>
+                            <span class="gallery-category" data-translate="proj-cat-menu">Menu design</span>
+                            <h3 data-translate="proj12-title">Menu Design</h3>
+                            <p data-translate="proj12-desc">A food menu layout that presents products and prices in a clear, visually appealing format.</p>
                             <div class="gallery-tags"><span>Layout</span><span>Graphic Design</span></div>
-                            <a href="assets/projects/GraphicDesing_Menu.jpeg" target="_blank" rel="noopener noreferrer" class="gallery-cta">View design <i class="bi bi-arrow-up-right"></i></a>
+                            <a href="assets/projects/GraphicDesing_Menu.jpeg" target="_blank" rel="noopener noreferrer" class="gallery-cta" data-translate="proj-cta">View design <i class="bi bi-arrow-up-right"></i></a>
                         </div>
                     </article>
 
@@ -554,77 +499,77 @@
                     <article class="gallery-project" data-category="community">
                         <img src="assets/projects/TEchnova1.jpeg" alt="Technova Digital Hub community initiative" loading="lazy">
                         <div class="gallery-overlay">
-                            <span class="gallery-category">Digital inclusion</span>
-                            <h3>Technova Digital Hub</h3>
-                            <p>A refugee-led initiative focused on expanding digital skills and learning opportunities for refugee and host communities in Kalobeyei.</p>
+                            <span class="gallery-category" data-translate="proj-cat-digital">Digital inclusion</span>
+                            <h3 data-translate="proj13-title">Technova Digital Hub</h3>
+                            <p data-translate="proj13-desc">A refugee-led initiative focused on expanding digital skills and learning opportunities for refugee and host communities in Kalobeyei.</p>
                             <div class="gallery-tags"><span>Digital Literacy</span><span>Leadership</span></div>
-                            <a href="#leadership" class="gallery-cta">Learn more <i class="bi bi-arrow-up-right"></i></a>
+                            <a href="#leadership" class="gallery-cta" data-translate="proj-cta-learn">Learn more <i class="bi bi-arrow-up-right"></i></a>
                         </div>
                     </article>
 
                     <article class="gallery-project" data-category="community">
                         <img src="assets/projects/Technova2.jpeg" alt="Technova Digital Hub activity" loading="lazy">
                         <div class="gallery-overlay">
-                            <span class="gallery-category">Community initiative</span>
-                            <h3>Technova Digital Hub — Activity</h3>
-                            <p>Community engagement and activities supporting digital inclusion and learning.</p>
+                            <span class="gallery-category" data-translate="proj-cat-comm-init">Community initiative</span>
+                            <h3 data-translate="proj14-title">Technova Digital Hub — Activity</h3>
+                            <p data-translate="proj14-desc">Community engagement and activities supporting digital inclusion and learning.</p>
                             <div class="gallery-tags"><span>Community</span><span>Digital Skills</span></div>
-                            <a href="#leadership" class="gallery-cta">Learn more <i class="bi bi-arrow-up-right"></i></a>
+                            <a href="#leadership" class="gallery-cta" data-translate="proj-cta-learn">Learn more <i class="bi bi-arrow-up-right"></i></a>
                         </div>
                     </article>
 
                     <article class="gallery-project" data-category="community">
                         <img src="assets/projects/Technova3.jpeg" alt="Technova Digital Hub project activity" loading="lazy">
                         <div class="gallery-overlay">
-                            <span class="gallery-category">Digital inclusion</span>
-                            <h3>Technova Digital Hub — Project</h3>
-                            <p>Project work supporting access to practical digital skills and community learning.</p>
+                            <span class="gallery-category" data-translate="proj-cat-digital">Digital inclusion</span>
+                            <h3 data-translate="proj15-title">Technova Digital Hub — Project</h3>
+                            <p data-translate="proj15-desc">Project work supporting access to practical digital skills and community learning.</p>
                             <div class="gallery-tags"><span>Technology</span><span>Community</span></div>
-                            <a href="#leadership" class="gallery-cta">Learn more <i class="bi bi-arrow-up-right"></i></a>
+                            <a href="#leadership" class="gallery-cta" data-translate="proj-cta-learn">Learn more <i class="bi bi-arrow-up-right"></i></a>
                         </div>
                     </article>
 
                     <article class="gallery-project" data-category="community">
                         <img src="assets/projects/Technova4.jpeg" alt="Technova Digital Hub community work" loading="lazy">
                         <div class="gallery-overlay">
-                            <span class="gallery-category">Community development</span>
-                            <h3>Technova Digital Hub — Outreach</h3>
-                            <p>An initiative promoting digital opportunity and community participation.</p>
+                            <span class="gallery-category" data-translate="proj-cat-comm-dev">Community development</span>
+                            <h3 data-translate="proj16-title">Technova Digital Hub — Outreach</h3>
+                            <p data-translate="proj16-desc">An initiative promoting digital opportunity and community participation.</p>
                             <div class="gallery-tags"><span>Outreach</span><span>Leadership</span></div>
-                            <a href="#leadership" class="gallery-cta">Learn more <i class="bi bi-arrow-up-right"></i></a>
+                            <a href="#leadership" class="gallery-cta" data-translate="proj-cta-learn">Learn more <i class="bi bi-arrow-up-right"></i></a>
                         </div>
                     </article>
 
                     <article class="gallery-project" data-category="community">
                         <img src="assets/projects/HopeBuilder.jpeg" alt="Hope Builders community project" loading="lazy">
                         <div class="gallery-overlay">
-                            <span class="gallery-category">Social impact</span>
-                            <h3>Hope Builders</h3>
-                            <p>A community initiative using identifiable branded tracksuits to help trace children who may become lost, while supporting vegetable gardening.</p>
+                            <span class="gallery-category" data-translate="proj-cat-social">Social impact</span>
+                            <h3 data-translate="proj17-title">Hope Builders</h3>
+                            <p data-translate="proj17-desc">A community initiative using identifiable branded tracksuits to help trace children who may become lost, while supporting vegetable gardening.</p>
                             <div class="gallery-tags"><span>Community</span><span>Child Support</span></div>
-                            <a href="#leadership" class="gallery-cta">Learn more <i class="bi bi-arrow-up-right"></i></a>
+                            <a href="#leadership" class="gallery-cta" data-translate="proj-cta-learn">Learn more <i class="bi bi-arrow-up-right"></i></a>
                         </div>
                     </article>
 
                     <article class="gallery-project" data-category="community">
                         <img src="assets/projects/HopeBuilder2.jpeg" alt="Hope Builders community activity" loading="lazy">
                         <div class="gallery-overlay">
-                            <span class="gallery-category">Community support</span>
-                            <h3>Hope Builders — Activities</h3>
-                            <p>Community project activities focused on practical support and improving well-being.</p>
+                            <span class="gallery-category" data-translate="proj-cat-comm-supp">Community support</span>
+                            <h3 data-translate="proj18-title">Hope Builders — Activities</h3>
+                            <p data-translate="proj18-desc">Community project activities focused on practical support and improving well-being.</p>
                             <div class="gallery-tags"><span>Social Impact</span><span>Teamwork</span></div>
-                            <a href="#leadership" class="gallery-cta">Learn more <i class="bi bi-arrow-up-right"></i></a>
+                            <a href="#leadership" class="gallery-cta" data-translate="proj-cta-learn">Learn more <i class="bi bi-arrow-up-right"></i></a>
                         </div>
                     </article>
 
                     <article class="gallery-project" data-category="community">
                         <img src="assets/projects/Community_Angaza.jpeg" alt="Angaza Center digital literacy community activity" loading="lazy">
                         <div class="gallery-overlay">
-                            <span class="gallery-category">Digital literacy</span>
-                            <h3>Angaza Center</h3>
-                            <p>Peer-to-peer digital literacy volunteering supporting learners in developing practical computer skills.</p>
+                            <span class="gallery-category" data-translate="proj-cat-digital-lit">Digital literacy</span>
+                            <h3 data-translate="proj19-title">Angaza Center</h3>
+                            <p data-translate="proj19-desc">Peer-to-peer digital literacy volunteering supporting learners in developing practical computer skills.</p>
                             <div class="gallery-tags"><span>Digital Literacy</span><span>Volunteering</span></div>
-                            <a href="#leadership" class="gallery-cta">Learn more <i class="bi bi-arrow-up-right"></i></a>
+                            <a href="#leadership" class="gallery-cta" data-translate="proj-cta-learn">Learn more <i class="bi bi-arrow-up-right"></i></a>
                         </div>
                     </article>
 
@@ -632,41 +577,41 @@
                     <article class="gallery-project" data-category="more">
                         <img src="assets/projects/Collaborative Tech Workspace Session.png" alt="Team recognition and project achievement" loading="lazy">
                         <div class="gallery-overlay">
-                            <span class="gallery-category">Achievement</span>
-                            <h3>SIKIKA Hackathon</h3>
-                            <p>An accessibility-focused team solution developed during a 72-hour hackathon at USIU-Africa.</p>
+                            <span class="gallery-category" data-translate="proj-cat-achieve">Achievement</span>
+                            <h3 data-translate="proj20-title">SIKIKA Hackathon</h3>
+                            <p data-translate="proj20-desc">An accessibility-focused team solution developed during a 72-hour hackathon at USIU-Africa.</p>
                             <div class="gallery-tags"><span>Innovation</span><span>Accessibility</span><span>Teamwork</span></div>
-                            <a href="https://github.com/Olwenyjoz" target="_blank" rel="noopener noreferrer" class="gallery-cta">View projects <i class="bi bi-arrow-up-right"></i></a>
+                            <a href="https://github.com/Olwenyjoz" target="_blank" rel="noopener noreferrer" class="gallery-cta" data-translate="proj-cta">View projects <i class="bi bi-arrow-up-right"></i></a>
                         </div>
                     </article>
 
                     <article class="gallery-project" data-category="more">
                         <img src="assets/projects/Trophy2.jpeg" alt="Team award and cultural achievement" loading="lazy">
                         <div class="gallery-overlay">
-                            <span class="gallery-category">Leadership achievement</span>
-                            <h3>Cultural Week Recognition</h3>
-                            <p>Recognition from cultural activities and collaborative leadership at USIU-Africa.</p>
+                            <span class="gallery-category" data-translate="proj-cat-lead-achieve">Leadership achievement</span>
+                            <h3 data-translate="proj21-title">Cultural Week Recognition</h3>
+                            <p data-translate="proj21-desc">Recognition from cultural activities and collaborative leadership at USIU-Africa.</p>
                             <div class="gallery-tags"><span>Leadership</span><span>Teamwork</span></div>
-                            <a href="#leadership" class="gallery-cta">Learn more <i class="bi bi-arrow-up-right"></i></a>
+                            <a href="#leadership" class="gallery-cta" data-translate="proj-cta-learn">Learn more <i class="bi bi-arrow-up-right"></i></a>
                         </div>
                     </article>
 
                     <article class="gallery-project" data-category="more">
                         <img src="assets/projects/Cultural Week Recognition Collage.png" alt="Team award and cultural achievement" loading="lazy">
                         <div class="gallery-overlay">
-                            <span class="gallery-category">Leadership achievement</span>
-                            <h3>Cultural Week Recognition</h3>
-                            <p>Recognition from cultural activities and collaborative leadership at USIU-Africa.</p>
+                            <span class="gallery-category" data-translate="proj-cat-lead-achieve">Leadership achievement</span>
+                            <h3 data-translate="proj21-title">Cultural Week Recognition</h3>
+                            <p data-translate="proj21-desc">Recognition from cultural activities and collaborative leadership at USIU-Africa.</p>
                             <div class="gallery-tags"><span>Leadership</span><span>Teamwork</span></div>
-                            <a href="assets/projects/Cultural Week Recognition Collage.png" target="_blank" rel="noopener noreferrer" class="gallery-cta">View Trophy <i class="bi bi-arrow-up-right"></i></a>
+                            <a href="assets/projects/Cultural Week Recognition Collage.png" target="_blank" rel="noopener noreferrer" class="gallery-cta" data-translate="proj-cta-trophy">View Trophy <i class="bi bi-arrow-up-right"></i></a>
                         </div>
                     </article>
 
                 </div>
 
                 <div class="projects-footer">
-                    <div><i class="bi bi-github"></i><span>Want to explore more of my code?</span></div>
-                    <a href="https://github.com/Olwenyjoz" target="_blank" rel="noopener noreferrer" class="button button-primary">Visit GitHub <i class="bi bi-arrow-up-right"></i></a>
+                    <div><i class="bi bi-github"></i><span data-translate="proj-footer">Want to explore more of my code?</span></div>
+                    <a href="https://github.com/Olwenyjoz" target="_blank" rel="noopener noreferrer" class="button button-primary" data-translate="proj-footer-btn">Visit GitHub <i class="bi bi-arrow-up-right"></i></a>
                 </div>
             </div>
         </section>
@@ -676,235 +621,76 @@
         <section class="section section-light" id="leadership">
             <div class="section-container">
                 <div class="section-heading">
-                    <h2>Leadership & Community</h2>
+                    <h2 data-translate="leadership-heading">Leadership & Community</h2>
                     <span class="heading-line"></span>
                 </div>
 
-                <p class="section-intro">I believe technology becomes more powerful when combined with service, collaboration, and opportunities for others.</p>
+                <p class="section-intro" data-translate="leadership-intro">I believe technology becomes more powerful when combined with service, collaboration, and opportunities for others.</p>
 
                 <div class="leadership-grid">
                     <article class="leadership-card">
                         <div class="leadership-icon"><i class="bi bi-lightbulb-fill"></i></div>
-                        <h3>Technova Digital Hub</h3>
-                        <p class="leadership-role">Co-founder & Secretary</p>
-                        <p>Supporting a community initiative focused on digital literacy and technology access.</p>
+                        <h3 data-translate="leadership-1-title">Technova Digital Hub</h3>
+                        <p class="leadership-role" data-translate="leadership-1-role">Co-founder & Secretary</p>
+                        <p data-translate="leadership-1-desc">Supporting a community initiative focused on digital literacy and technology access.</p>
                     </article>
 
                     <article class="leadership-card">
                         <div class="leadership-icon"><i class="bi bi-shop-window"></i></div>
-                        <h3>UNIMART Africa</h3>
-                        <p class="leadership-role">Co-founder</p>
-                        <p>Contributing to an e-commerce platform and collaborating on digital product development.</p>
+                        <h3 data-translate="leadership-2-title">UNIMART Africa</h3>
+                        <p class="leadership-role" data-translate="leadership-2-role">Co-founder</p>
+                        <p data-translate="leadership-2-desc">Contributing to an e-commerce platform and collaborating on digital product development.</p>
                     </article>
 
                     <article class="leadership-card">
                         <div class="leadership-icon"><i class="bi bi-people-fill"></i></div>
-                        <h3>Ajira Digital Club</h3>
-                        <p class="leadership-role">Secretary, 2025</p>
-                        <p>Supporting student engagement in digital opportunities, learning, and industry exposure.</p>
+                        <h3 data-translate="leadership-3-title">Ajira Digital Club</h3>
+                        <p class="leadership-role" data-translate="leadership-3-role">Secretary, 2025</p>
+                        <p data-translate="leadership-3-desc">Supporting student engagement in digital opportunities, learning, and industry exposure.</p>
                     </article>
 
                     <article class="leadership-card">
                         <div class="leadership-icon"><i class="bi bi-trophy-fill"></i></div>
-                        <h3>Cultural Week Committee</h3>
-                        <p class="leadership-role">Chairman, 2026</p>
-                        <p>Helped lead a cultural week committee for Sudanese and South Sudanese students; the event earned four trophies.</p>
+                        <h3 data-translate="leadership-4-title">Cultural Week Committee</h3>
+                        <p class="leadership-role" data-translate="leadership-4-role">Chairman, 2026</p>
+                        <p data-translate="leadership-4-desc">Helped lead a cultural week committee for Sudanese and South Sudanese students; the event earned four trophies.</p>
                     </article>
 
                     <article class="leadership-card">
                         <div class="leadership-icon"><i class="bi bi-heart-pulse-fill"></i></div>
-                        <h3>Hope Builders</h3>
-                        <p class="leadership-role">Acting Team Lead & Secretary</p>
-                        <p>Contributed to a project supporting children's identification and nutrition through branded tracksuits and vegetables.</p>
+                        <h3 data-translate="leadership-5-title">Hope Builders</h3>
+                        <p class="leadership-role" data-translate="leadership-5-role">Acting Team Lead & Secretary</p>
+                        <p data-translate="leadership-5-desc">Contributed to a project supporting children's identification and nutrition through branded tracksuits and vegetables.</p>
                     </article>
 
                     <article class="leadership-card">
                         <div class="leadership-icon"><i class="bi bi-pc-display-horizontal"></i></div>
-                        <h3>Digital Literacy</h3>
-                        <p class="leadership-role">Facilitator & Volunteer</p>
-                        <p>Shared computer skills and practical technology knowledge with learners and community members.</p>
+                        <h3 data-translate="leadership-6-title">Digital Literacy</h3>
+                        <p class="leadership-role" data-translate="leadership-6-role">Facilitator & Volunteer</p>
+                        <p data-translate="leadership-6-desc">Shared computer skills and practical technology knowledge with learners and community members.</p>
                     </article>
                 </div>
             </div>
         </section> 
-                
-        <!-- Sliding testimonials -->
-        <section class="section testimonials-section" id="testimonials">
-            <div class="section-container">
-                <div class="section-heading">
-                    <h2>Testimonials</h2>
-                    <span class="heading-line"></span>
-                </div>
-
-                <p class="section-intro">
-                    Reflections on teamwork, technology, digital learning, leadership, and community impact.
-                </p>
-
-                <div class="testimonial-carousel" id="testimonial-carousel"
-                    aria-roledescription="carousel" aria-label="Testimonials">
-                    <div class="testimonial-viewport">
-                        <div class="testimonial-track" id="testimonial-track">
-
-                            <!-- Testimonial 1 -->
-                            <article class="testimonial-slide">
-                                <div class="testimonial-card">
-                                    <div class="quote-mark"><i class="bi bi-quote"></i></div>
-                                    <p class="testimonial-text">
-                                        Working with Deogracia showed me the value of collaboration and
-                                        problem-solving. He listens to ideas, contributes thoughtfully,
-                                        and focuses on solutions that help the team.
-                                    </p>
-                                    <div class="quote-end"><i class="bi bi-quote"></i></div>
-                                </div>
-                                <div class="testimonial-person">
-                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=180&q=80"
-                                        alt="Dummy testimonial portrait of a man"
-                                        loading="lazy">
-                                    <h3>Hackathon Teammate</h3>
-                                    <p>University Innovation Project</p>
-                                </div>
-                            </article>
-
-                            <!-- Testimonial 2 -->
-                            <article class="testimonial-slide">
-                                <div class="testimonial-card">
-                                    <div class="quote-mark"><i class="bi bi-quote"></i></div>
-                                    <p class="testimonial-text">
-                                        Deogracia understands how digital skills create opportunities.
-                                        He values clear explanations, encourages questions, and helps
-                                        learners build confidence as they learn.
-                                    </p>
-                                    <div class="quote-end"><i class="bi bi-quote"></i></div>
-                                </div>
-                                <div class="testimonial-person">
-                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=180&q=80"
-                                        alt="Dummy testimonial portrait of a woman"
-                                        loading="lazy">
-                                    <h3>Digital Learning Colleague</h3>
-                                    <p>Digital Literacy Training</p>
-                                </div>
-                            </article>
-
-                            <!-- Testimonial 3 -->
-                            <article class="testimonial-slide">
-                                <div class="testimonial-card">
-                                    <div class="quote-mark"><i class="bi bi-quote"></i></div>
-                                    <p class="testimonial-text">
-                                        Deogracia brings commitment and responsibility to teamwork.
-                                        He values different perspectives and understands that successful
-                                        projects depend on cooperation and technical skills.
-                                    </p>
-                                    <div class="quote-end"><i class="bi bi-quote"></i></div>
-                                </div>
-                                <div class="testimonial-person">
-                                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=180&q=80"
-                                        alt="Dummy testimonial portrait of a man"
-                                        loading="lazy">
-                                    <h3>Project Collaborator</h3>
-                                    <p>Teamwork and Innovation</p>
-                                </div>
-                            </article>
-
-                            <!-- Testimonial 4 -->
-                            <article class="testimonial-slide">
-                                <div class="testimonial-card">
-                                    <div class="quote-mark"><i class="bi bi-quote"></i></div>
-                                    <p class="testimonial-text">
-                                        Deogracia is interested in using technology to solve practical
-                                        challenges. His software projects reflect a growing focus on
-                                        usability, organisation, and useful digital solutions.
-                                    </p>
-                                    <div class="quote-end"><i class="bi bi-quote"></i></div>
-                                </div>
-                                <div class="testimonial-person">
-                                    <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=180&q=80"
-                                        alt="Dummy testimonial portrait of a woman"
-                                        loading="lazy">
-                                    <h3>Technology Peer</h3>
-                                    <p>Software Development</p>
-                                </div>
-                            </article>
-
-                            <!-- Testimonial 5 -->
-                            <article class="testimonial-slide">
-                                <div class="testimonial-card">
-                                    <div class="quote-mark"><i class="bi bi-quote"></i></div>
-                                    <p class="testimonial-text">
-                                        Community work requires consistency and cooperation. Deogracia's
-                                        involvement in youth initiatives reflects the importance of
-                                        practical activities that respond to community needs.
-                                    </p>
-                                    <div class="quote-end"><i class="bi bi-quote"></i></div>
-                                </div>
-                                <div class="testimonial-person">
-                                    <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=180&q=80"
-                                        alt="Dummy testimonial portrait of a woman"
-                                        loading="lazy">
-                                    <h3>Community Initiative Colleague</h3>
-                                    <p>Youth Empowerment</p>
-                                </div>
-                            </article>
-
-                            <!-- Testimonial 6 -->
-                            <article class="testimonial-slide">
-                                <div class="testimonial-card">
-                                    <div class="quote-mark"><i class="bi bi-quote"></i></div>
-                                    <p class="testimonial-text">
-                                        Deogracia combines organisation, communication, and teamwork
-                                        in leadership. He understands the importance of shared
-                                        responsibilities and working towards common goals.
-                                    </p>
-                                    <div class="quote-end"><i class="bi bi-quote"></i></div>
-                                </div>
-                                <div class="testimonial-person">
-                                    <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=180&q=80"
-                                        alt="Dummy testimonial portrait of a man"
-                                        loading="lazy">
-                                    <h3>Leadership Team Colleague</h3>
-                                    <p>Community Leadership</p>
-                                </div>
-                            </article>
-
-                        </div>
-                    </div>
-
-                    <div class="carousel-controls">
-                        <button class="carousel-arrow" id="testimonial-prev"
-                                aria-label="Previous testimonials">
-                            <i class="bi bi-arrow-left"></i>
-                        </button>
-
-                        <div class="carousel-dots" id="testimonial-dots"
-                            aria-label="Choose testimonial slide"></div>
-
-                        <button class="carousel-arrow" id="testimonial-next"
-                                aria-label="Next testimonials">
-                            <i class="bi bi-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
 
 
         <!-- Interests -->
         <section class="section section-light" id="interests">
             <div class="section-container">
                 <div class="section-heading">
-                    <h2>Beyond Coding</h2>
+                    <h2 data-translate="interests-heading">Beyond Coding</h2>
                     <span class="heading-line"></span>
                 </div>
 
-                <p class="section-intro">The interests and activities that inspire me outside technology.</p>
+                <p class="section-intro" data-translate="interests-intro">The interests and activities that inspire me outside technology.</p>
 
                 <div class="interests-grid">
-                    <div class="interest-item"><span class="interest-icon"><i class="bi bi-book-half"></i></span><span>Reading & Writing</span></div>
-                    <div class="interest-item"><span class="interest-icon"><i class="bi bi-music-note-beamed"></i></span><span>Music & Singing</span></div>
-                    <div class="interest-item"><span class="interest-icon"><i class="bi bi-music-player-fill"></i></span><span>Learning Piano</span></div>
-                    <div class="interest-item"><span class="interest-icon"><i class="bi bi-dribbble"></i></span><span>Football</span></div>
-                    <div class="interest-item"><span class="interest-icon"><i class="bi bi-tree-fill"></i></span><span>Nature Walks</span></div>
-                    <div class="interest-item"><span class="interest-icon"><i class="bi bi-people-fill"></i></span><span>Community Service</span></div>
+                    <div class="interest-item"><span class="interest-icon"><i class="bi bi-book-half"></i></span><span data-translate="interest-1">Reading & Writing</span></div>
+                    <div class="interest-item"><span class="interest-icon"><i class="bi bi-music-note-beamed"></i></span><span data-translate="interest-2">Music & Singing</span></div>
+                    <div class="interest-item"><span class="interest-icon"><i class="bi bi-music-player-fill"></i></span><span data-translate="interest-3">Learning Piano</span></div>
+                    <div class="interest-item"><span class="interest-icon"><i class="bi bi-dribbble"></i></span><span data-translate="interest-4">Football</span></div>
+                    <div class="interest-item"><span class="interest-icon"><i class="bi bi-tree-fill"></i></span><span data-translate="interest-5">Nature Walks</span></div>
+                    <div class="interest-item"><span class="interest-icon"><i class="bi bi-people-fill"></i></span><span data-translate="interest-6">Community Service</span></div>
                 </div>
             </div>
         </section>
@@ -913,37 +699,37 @@
         <section class="section" id="contact">
             <div class="section-container">
                 <div class="section-heading">
-                    <h2>Contact Me</h2>
+                    <h2 data-translate="contact-heading">Contact Me</h2>
                     <span class="heading-line"></span>
                 </div>
 
-                <p class="section-intro">Have a project idea, internship opportunity, or a chance to collaborate? I would be glad to connect.</p>
+                <p class="section-intro" data-translate="contact-intro">Have a project idea, internship opportunity, or a chance to collaborate? I would be glad to connect.</p>
 
                 <div class="contact-grid">
                     <div class="contact-info">
                         <div class="contact-card">
                             <div class="contact-icon"><i class="bi bi-geo-alt-fill"></i></div>
-                            <div><h3>Location</h3><p>Nairobi, Kenya</p><a href="https://www.google.com/maps/search/?api=1&query=Nairobi%2C+Kenya" target="_blank" rel="noopener noreferrer">Open in Google Maps <i class="bi bi-arrow-up-right"></i></a></div>
+                            <div><h3 data-translate="contact-loc-title">Location</h3><p data-translate="contact-loc-val">Nairobi, Kenya</p><a href="https://www.google.com/maps/search/?api=1&query=Nairobi%2C+Kenya" target="_blank" rel="noopener noreferrer"><span data-translate="contact-map">Open in Google Maps</span> <i class="bi bi-arrow-up-right"></i></a></div>
                         </div>
 
                         <div class="contact-card">
                             <div class="contact-icon"><i class="bi bi-envelope-at-fill"></i></div>
-                            <div><h3>Email</h3><p><a href="mailto:deograciaolweny@gmail.com">deograciaolweny@gmail.com</a></p></div>
+                            <div><h3 data-translate="contact-email-title">Email</h3><p><a href="mailto:deograciaolweny@gmail.com">deograciaolweny@gmail.com</a></p></div>
                         </div>
 
                         <div class="contact-card">
                             <div class="contact-icon"><i class="bi bi-github"></i></div>
-                            <div><h3>GitHub</h3><p><a href="https://github.com/Olwenyjoz" target="_blank" rel="noopener noreferrer">github.com/Olwenyjoz</a></p></div>
+                            <div><h3 data-translate="contact-github-title">GitHub</h3><p><a href="https://github.com/Olwenyjoz" target="_blank" rel="noopener noreferrer">github.com/Olwenyjoz</a></p></div>
                         </div>
 
                         <div class="contact-card">
                             <div class="contact-icon"><i class="bi bi-linkedin"></i></div>
-                            <div><h3>LinkedIn</h3><p><a href="https://www.linkedin.com/in/deogracia-olweny" target="_blank" rel="noopener noreferrer">Connect with me</a></p></div>
+                            <div><h3 data-translate="contact-linkedin-title">LinkedIn</h3><p><a href="https://www.linkedin.com/in/deogracia-olweny" target="_blank" rel="noopener noreferrer" data-translate="contact-connect">Connect with me</a></p></div>
                         </div>
 
                         <div class="contact-card">
                             <div class="contact-icon"><i class="bi bi-linkedin"></i></div>
-                            <div><h3>Instagram</h3><p><a href="https://www.instagram.com/olwenyjoz" target="_blank" rel="noopener noreferrer">Connect with me</a></p></div>
+                            <div><h3 data-translate="contact-insta-title">Instagram</h3><p><a href="https://www.instagram.com/olwenyjoz" target="_blank" rel="noopener noreferrer" data-translate="contact-connect">Connect with me</a></p></div>
                         </div>
 
                     </div>
@@ -952,36 +738,36 @@
                     <form class="contact-form" id="contact-form">
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="visitor-name">Your name</label>
+                                <label for="visitor-name" data-translate="form-name">Your name</label>
                                 <input type="text" id="visitor-name" name="name" placeholder="Enter your name" required>
                             </div>
                             <div class="form-group">
-                                <label for="visitor-email">Your email</label>
+                                <label for="visitor-email" data-translate="form-email">Your email</label>
                                 <input type="email" id="visitor-email" name="email" placeholder="Enter your email" required>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="visitor-subject">Subject</label>
+                            <label for="visitor-subject" data-translate="form-subject">Subject</label>
                             <input type="text" id="visitor-subject" name="subject" placeholder="What is this about?" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="visitor-message">Message</label>
+                            <label for="visitor-message" data-translate="form-message">Message</label>
                             <textarea id="visitor-message" name="message" rows="6" placeholder="Write your message..." required></textarea>
                         </div>
 
                         <!-- Action Buttons Container -->
                         <div class="form-actions">
                             <button type="submit" class="button button-primary" id="send-message-btn">
-                                Send Message <i class="bi bi-send-fill"></i>
+                                <span data-translate="form-btn-send">Send Message</span> <i class="bi bi-send-fill"></i>
                             </button>
                             <a href="https://wa.me/254748172429" class="button button-whatsapp" target="_blank" rel="noopener noreferrer">
-                                Chat on WhatsApp <i class="bi bi-whatsapp"></i>
+                                <span data-translate="form-btn-wa">Chat on WhatsApp</span> <i class="bi bi-whatsapp"></i>
                             </a>
                         </div>
                         
-                        <p class="form-note" id="form-note" aria-live="polite">Submitting opens your email application with the message prepared.</p>
+                        <p class="form-note" id="form-note" aria-live="polite" data-translate="form-note">Submitting opens your email application with the message prepared.</p>
                     </form>
                 </div>
             </div>
@@ -989,7 +775,7 @@
 
         <!-- Footer -->
         <footer class="site-footer">
-            <p>&copy; <span id="current-year"></span> <strong>Deogracia Olweny</strong>. All rights reserved.</p>
+            <p>&copy; <span id="current-year"></span> <strong>Deogracia Olweny</strong>. <span data-translate="footer-rights">All rights reserved.</span></p>
         </footer>
 
         <!-- Back to top -->
